@@ -8,21 +8,18 @@ async function fetchStatus() {
   const card = document.getElementById('statusCard');
   const detail = document.getElementById('statusDetail');
   const playerList = document.getElementById('playerList');
+  const statusLoading = document.getElementById('statusLoading');
+  const statusResult = document.getElementById('statusResult');
   if (!card) return;
 
   // Reset UI
   card.className = 'status-card';
   card.setAttribute('aria-busy', 'true');
-  card.innerHTML = `
-    <div class="status-loading">
-      <div class="bear-loader">
-        <div class="bear-loader-emoji" aria-hidden="true">🐻</div>
-        <div class="loader-paws" aria-hidden="true"><span>🐾</span><span>🐾</span><span>🐾</span></div>
-      </div>
-      <p class="loading-text">小熊正在查看服务器…</p>
-    </div>`;
+  if (statusLoading) statusLoading.style.display = 'flex';
+  if (statusResult) statusResult.style.display = 'none';
   if (detail) detail.style.display = 'none';
   if (playerList) playerList.style.display = 'none';
+  resetMetrics();
 
   try {
     const url = `https://api.mcsrvstat.us/3/${SERVER_HOST}:${SERVER_PORT}`;
@@ -33,12 +30,15 @@ async function fetchStatus() {
     if (!data || !data.online) {
       card.className = 'status-card offline';
       card.setAttribute('aria-busy', 'false');
-      card.innerHTML = `
-        <div class="status-result">
-          <div class="status-icon" aria-hidden="true">🔴</div>
-          <div class="status-text offline-text">服务器离线</div>
-          <div class="status-players">服务器当前未运行或无法连接</div>
-        </div>`;
+      if (statusLoading) statusLoading.style.display = 'none';
+      if (statusResult) {
+        statusResult.style.display = 'block';
+        document.getElementById('statusIcon').textContent = '🔴';
+        document.getElementById('statusText').textContent = '服务器离线';
+        document.getElementById('statusText').className = 'status-text offline-text';
+        document.getElementById('statusPlayers').textContent = '服务器当前未运行或无法连接';
+      }
+      updateMetrics({ status: '离线', players: '-', ping: '-', version: '-' });
       if (detail) detail.style.display = 'none';
       if (playerList) playerList.style.display = 'none';
       return;
@@ -49,12 +49,21 @@ async function fetchStatus() {
     card.setAttribute('aria-busy', 'false');
     const playersOnline = data.players?.online ?? 0;
     const playersMax = data.players?.max ?? 0;
-    card.innerHTML = `
-      <div class="status-result">
-        <div class="status-icon" aria-hidden="true">🟢</div>
-        <div class="status-text online-text">服务器在线</div>
-        <div class="status-players">${playersOnline} / ${playersMax} 名玩家在线</div>
-      </div>`;
+    if (statusLoading) statusLoading.style.display = 'none';
+    if (statusResult) {
+      statusResult.style.display = 'block';
+      document.getElementById('statusIcon').textContent = '🟢';
+      document.getElementById('statusText').textContent = '服务器在线';
+      document.getElementById('statusText').className = 'status-text online-text';
+      document.getElementById('statusPlayers').textContent = `${playersOnline} / ${playersMax} 名玩家在线`;
+    }
+
+    updateMetrics({
+      status: '在线',
+      players: `${playersOnline}/${playersMax}`,
+      ping: data.debug?.ping ? `${data.debug.ping}ms` : '-',
+      version: data.version?.name || data.version || '-'
+    });
 
     if (detail) detail.style.display = 'block';
 
@@ -89,16 +98,33 @@ async function fetchStatus() {
   } catch (err) {
     card.className = 'status-card offline';
     card.setAttribute('aria-busy', 'false');
-    card.innerHTML = `
-      <div class="status-result">
-        <div class="status-icon" aria-hidden="true">⚠️</div>
-        <div class="status-text offline-text">查询失败</div>
-        <div class="status-players">无法连接到状态查询服务，请稍后重试</div>
-      </div>`;
+    if (statusLoading) statusLoading.style.display = 'none';
+    if (statusResult) {
+      statusResult.style.display = 'block';
+      document.getElementById('statusIcon').textContent = '⚠️';
+      document.getElementById('statusText').textContent = '查询失败';
+      document.getElementById('statusText').className = 'status-text offline-text';
+      document.getElementById('statusPlayers').textContent = '无法连接到状态查询服务，请稍后重试';
+    }
+    updateMetrics({ status: '查询失败', players: '-', ping: '-', version: '-' });
     if (detail) detail.style.display = 'none';
     if (playerList) playerList.style.display = 'none';
     console.error('Status fetch error:', err);
   }
+}
+
+function updateMetrics({ status, players, ping, version }) {
+  const map = {
+    metricStatus: status,
+    metricPlayers: players,
+    metricPing: ping,
+    metricVersion: version
+  };
+  Object.entries(map).forEach(([id, value]) => setText(id, value));
+}
+
+function resetMetrics() {
+  updateMetrics({ status: '查询中…', players: '-', ping: '-', version: '-' });
 }
 
 function setText(id, value) {

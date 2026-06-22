@@ -36,12 +36,13 @@
       <p class="page-subtitle"><code class="status-ip-mono">clementlb.top</code></p>
     </div>
 
+    <!-- Status Result Card -->
     <div class="status-card" id="statusCard" role="status" aria-live="polite" aria-busy="true">
       <div class="card-corner corner-tl" aria-hidden="true"></div>
       <div class="card-corner corner-tr" aria-hidden="true"></div>
       <div class="card-corner corner-bl" aria-hidden="true"></div>
       <div class="card-corner corner-br" aria-hidden="true"></div>
-      <div class="status-loading">
+      <div class="status-loading" id="statusLoading">
         <div class="bear-loader">
           <div class="bear-loader-emoji" aria-hidden="true">🐻</div>
           <div class="loader-paws" aria-hidden="true">
@@ -50,8 +51,38 @@
         </div>
         <p class="loading-text">小熊正在查看服务器…</p>
       </div>
+      <div class="status-result" id="statusResult" style="display:none;">
+        <div class="status-icon" id="statusIcon" aria-hidden="true">🟢</div>
+        <div class="status-text" id="statusText">服务器在线</div>
+        <div class="status-players" id="statusPlayers">0 / 0 名玩家在线</div>
+      </div>
     </div>
 
+    <!-- Metrics Grid -->
+    <div class="metrics-grid" id="metricsGrid">
+      <div class="metric-card">
+        <span class="metric-icon" aria-hidden="true">🟢</span>
+        <span class="metric-label">服务器状态</span>
+        <span class="metric-value" id="metricStatus">查询中…</span>
+      </div>
+      <div class="metric-card">
+        <span class="metric-icon" aria-hidden="true">👥</span>
+        <span class="metric-label">在线玩家</span>
+        <span class="metric-value" id="metricPlayers">-</span>
+      </div>
+      <div class="metric-card">
+        <span class="metric-icon" aria-hidden="true">📶</span>
+        <span class="metric-label">延迟</span>
+        <span class="metric-value" id="metricPing">-</span>
+      </div>
+      <div class="metric-card">
+        <span class="metric-icon" aria-hidden="true">📦</span>
+        <span class="metric-label">游戏版本</span>
+        <span class="metric-value" id="metricVersion">-</span>
+      </div>
+    </div>
+
+    <!-- Detail Cards -->
     <div class="status-detail" id="statusDetail" style="display:none;">
       <div class="card-corner corner-tl" aria-hidden="true"></div>
       <div class="card-corner corner-tr" aria-hidden="true"></div>
@@ -91,6 +122,38 @@
         <div class="player-grid" id="playerGrid"></div>
       </div>
     </div>
+
+    <!-- Info Cards -->
+    <section class="info-cards" aria-labelledby="info-heading">
+      <h2 class="visually-hidden" id="info-heading">服务器信息</h2>
+      <div class="info-card">
+        <div class="card-corner corner-tl" aria-hidden="true"></div>
+        <div class="card-corner corner-tr" aria-hidden="true"></div>
+        <div class="card-corner corner-bl" aria-hidden="true"></div>
+        <div class="card-corner corner-br" aria-hidden="true"></div>
+        <div class="info-icon" aria-hidden="true">🎮</div>
+        <h3 class="info-title">游戏版本</h3>
+        <p class="info-desc">Java 版 1.21+，推荐开启正版验证进入，享受完整多人游戏体验。</p>
+      </div>
+      <div class="info-card">
+        <div class="card-corner corner-tl" aria-hidden="true"></div>
+        <div class="card-corner corner-tr" aria-hidden="true"></div>
+        <div class="card-corner corner-bl" aria-hidden="true"></div>
+        <div class="card-corner corner-br" aria-hidden="true"></div>
+        <div class="info-icon" aria-hidden="true">📜</div>
+        <h3 class="info-title">社区规则</h3>
+        <p class="info-desc">友善交流、禁止破坏、尊重他人。和小熊一起维护温馨和谐的游戏环境。</p>
+      </div>
+      <div class="info-card">
+        <div class="card-corner corner-tl" aria-hidden="true"></div>
+        <div class="card-corner corner-tr" aria-hidden="true"></div>
+        <div class="card-corner corner-bl" aria-hidden="true"></div>
+        <div class="card-corner corner-br" aria-hidden="true"></div>
+        <div class="info-icon" aria-hidden="true">🚀</div>
+        <h3 class="info-title">快速加入</h3>
+        <p class="info-desc">复制地址 <code class="info-code">clementlb.top:31043</code>，打开 Minecraft 多人游戏即可连接。</p>
+      </div>
+    </section>
 
     <button class="btn btn-primary btn-refresh" onclick="fetchStatus()" aria-label="刷新服务器状态">
       <span class="btn-icon" aria-hidden="true">🔄</span>
