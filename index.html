@@ -81,7 +81,7 @@
         </div>
         <div class="stat-divider"></div>
         <div class="stat">
-          <div class="stat-num">24/7</div>
+          <div class="stat-num" id="homePlayerCount">-</div>
           <div class="stat-label">在线运行</div>
         </div>
         <div class="stat-divider"></div>
@@ -274,8 +274,27 @@
         }
       }
 
+      fetchPlayerCount();
+
       // Stagger card reveal is handled in CSS (avoids first-frame flash)
     });
+
+    function fetchPlayerCount() {
+      const el = document.getElementById('homePlayerCount');
+      if (!el) return;
+      fetch('https://api.mcsrvstat.us/3/clementlb.top:25565')
+        .then(r => r.json())
+        .then(data => {
+          if (data && data.online) {
+            const online = data.players?.online ?? 0;
+            const max = data.players?.max ?? 0;
+            el.textContent = online + ' / ' + max;
+          } else {
+            el.textContent = '离线';
+          }
+        })
+        .catch(() => { el.textContent = '-'; });
+    }
   </script>
 </body>
 </html>
