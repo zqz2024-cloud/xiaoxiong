@@ -1,7 +1,7 @@
 // 页面展示的服务器地址（友好名称）
 const DISPLAY_HOST = 'clementlb.top';
-// 真实查询的服务器地址（FRP 穿透后的原始地址）
-const SERVER_HOST = 'frp-gap.com';
+// 真实查询的服务器地址
+const SERVER_HOST = '119.84.246.218';
 const SERVER_PORT = 31043;
 
 async function fetchStatus() {
@@ -26,6 +26,7 @@ async function fetchStatus() {
     const response = await fetch(url);
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const data = await response.json();
+    console.log('mcsrvstat response:', data);
 
     if (!data || !data.online) {
       card.className = 'status-card offline';
