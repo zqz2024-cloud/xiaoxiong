@@ -275,6 +275,7 @@
       }
 
       fetchPlayerCount();
+      setInterval(fetchPlayerCount, 60000);
 
       // Stagger card reveal is handled in CSS (avoids first-frame flash)
     });

@@ -136,5 +136,6 @@ function escapeHtml(text) {
   return div.innerHTML;
 }
 
-// Auto-fetch on load
+// Auto-fetch on load + every 60s
 fetchStatus();
+setInterval(fetchStatus, 60000);
