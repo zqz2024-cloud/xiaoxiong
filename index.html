@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#a0522d">
   <title>小熊的小家庭 - Minecraft 服务器</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -58,15 +59,15 @@
           <span class="ip-label">服务器地址</span>
           <code class="ip-value">clementlb.top</code>
         </div>
-        <button class="ip-copy" onclick="copyIp()" title="复制地址">
-          <span class="copy-icon">📋</span>
+        <button class="ip-copy" onclick="copyIp()" title="复制地址" aria-label="复制服务器地址">
+          <span class="copy-icon" aria-hidden="true">📋</span>
         </button>
       </div>
 
       <div class="hero-actions">
         <a href="status.html" class="btn btn-primary">
           <span>查看服务器状态</span>
-          <span class="btn-arrow">→</span>
+          <span class="btn-arrow" aria-hidden="true">→</span>
         </a>
         <a href="#features" class="btn btn-ghost">
           <span>了解特色</span>
@@ -273,19 +274,7 @@
         }
       }
 
-      // Stagger card reveal (skipped under reduced motion)
-      if (!prefersReducedMotion) {
-        const cards = document.querySelectorAll('.feature-card, .step');
-        cards.forEach((c, i) => {
-          c.style.opacity = '0';
-          c.style.transform = 'translateY(20px)';
-          c.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-          setTimeout(() => {
-            c.style.opacity = '1';
-            c.style.transform = 'translateY(0)';
-          }, 100 + i * 80);
-        });
-      }
+      // Stagger card reveal is handled in CSS (avoids first-frame flash)
     });
   </script>
 </body>
