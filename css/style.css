@@ -166,7 +166,7 @@ body {
 
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
 }
 
@@ -398,6 +398,8 @@ body {
   .hero-title { font-size: 2rem; }
   .hero-tagline { font-size: 1rem; }
   .detail-grid { grid-template-columns: 1fr; }
+  .join-steps { grid-template-columns: 1fr; }
+  .features-grid { grid-template-columns: 1fr; }
   .nav-logo { font-size: 1rem; }
   .nav-links { gap: 16px; }
 }
