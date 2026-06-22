@@ -167,22 +167,16 @@ body {
 .features-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  align-items: stretch;
+  gap: 24px;
 }
 
 .feature-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 24px 18px;
+  padding: 28px 20px;
   text-align: center;
   transition: all 0.3s;
-  min-height: 180px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
 }
 
 .feature-card:hover {
@@ -191,12 +185,12 @@ body {
   border-color: var(--primary);
 }
 
-.feature-icon { font-size: 2.2rem; line-height: 1; margin-bottom: 12px; }
+.feature-icon { font-size: 2rem; margin-bottom: 12px; }
 
 .feature-card h3 {
-  font-size: 1.05rem;
+  font-size: 1rem;
   color: #fff;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .feature-card p {
@@ -209,27 +203,21 @@ body {
 .join-steps {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  align-items: stretch;
+  gap: 24px;
 }
 
 .step {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 24px 18px;
+  padding: 28px 20px;
   text-align: center;
   position: relative;
-  min-height: 180px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
 }
 
 .step-number {
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   background: var(--primary);
   color: #fff;
   border-radius: 50%;
@@ -237,12 +225,11 @@ body {
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  font-size: 1.05rem;
-  margin-bottom: 12px;
-  line-height: 1;
+  font-size: 1.1rem;
+  margin: 0 auto 16px;
 }
 
-.step h3 { font-size: 1rem; color: #fff; margin-bottom: 6px; }
+.step h3 { font-size: 1rem; color: #fff; margin-bottom: 8px; }
 .step p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; }
 .step code {
   font-family: 'Consolas', 'Courier New', monospace;
@@ -407,26 +394,12 @@ body {
 .footer-tagline { margin-top: 4px; font-size: 0.8rem; opacity: 0.7; }
 
 /* ===== Responsive ===== */
-/* 手机端：使用下面（步骤）的大卡片样式 */
 @media (max-width: 600px) {
   .hero-title { font-size: 2rem; }
   .hero-tagline { font-size: 1rem; }
   .detail-grid { grid-template-columns: 1fr; }
-  .join-steps,
+  .join-steps { grid-template-columns: 1fr; }
   .features-grid { grid-template-columns: 1fr; }
-
-  /* 加大卡片内边距和字号，模拟下面的"双列"卡片观感 */
-  .feature-card,
-  .step {
-    padding: 32px 24px;
-  }
-  .feature-icon { font-size: 2.6rem; margin-bottom: 16px; }
-  .feature-card h3,
-  .step h3 { font-size: 1.1rem; margin-bottom: 10px; }
-  .feature-card p,
-  .step p { font-size: 0.9rem; }
-  .step-number { width: 44px; height: 44px; font-size: 1.15rem; margin-bottom: 16px; }
-
   .nav-logo { font-size: 1rem; }
   .nav-links { gap: 16px; }
 }
