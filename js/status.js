@@ -1,8 +1,8 @@
 // 页面展示的服务器地址（友好名称）
 const DISPLAY_HOST = 'clementlb.top';
 // 真实查询的服务器地址
-const SERVER_HOST = 'frp-dry.com';
-const SERVER_PORT = 57535;
+const SERVER_HOST = 'clementlb.top';
+const SERVER_PORT = 25565;
 
 async function fetchStatus() {
   const card = document.getElementById('statusCard');
