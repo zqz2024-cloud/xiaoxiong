@@ -1,8 +1,8 @@
 // 页面展示的服务器地址（友好名称）
 const DISPLAY_HOST = 'clementlb.top';
 // 真实查询的服务器地址
-const SERVER_HOST = '119.84.246.218';
-const SERVER_PORT = 31043;
+const SERVER_HOST = '64.49.47.164';
+const SERVER_PORT = 56792;
 
 async function fetchStatus() {
   const card = document.getElementById('statusCard');
