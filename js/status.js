@@ -13,7 +13,7 @@ async function fetchStatus() {
   playerList.style.display = 'none';
 
   try {
-    const url = `https://api.mcsrvstat.us/3/${SERVER_IP}:${SERVER_PORT}`;
+    const url = `https://api.mcsrvstat.us/3/${SERVER_HOST}:${SERVER_PORT}`;
     const response = await fetch(url);
     const data = await response.json();
 
