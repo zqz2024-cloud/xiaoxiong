@@ -39,7 +39,7 @@ async function fetchStatus() {
         document.getElementById('statusText').className = 'status-text offline-text';
         document.getElementById('statusPlayers').textContent = '服务器当前未运行或无法连接';
       }
-      updateMetrics({ status: '离线', players: '-', version: '-' });
+      updateMetrics({ status: '离线', players: '-', ping: '-', version: '-' });
       if (detail) detail.style.display = 'none';
       if (playerList) playerList.style.display = 'none';
       return;
@@ -62,6 +62,7 @@ async function fetchStatus() {
     updateMetrics({
       status: '在线',
       players: `${playersOnline}/${playersMax}`,
+      ping: '-',
       version: data.version?.name || data.version || '-'
     });
 
@@ -105,24 +106,25 @@ async function fetchStatus() {
       document.getElementById('statusText').className = 'status-text offline-text';
       document.getElementById('statusPlayers').textContent = '无法连接到状态查询服务，请稍后重试';
     }
-    updateMetrics({ status: '查询失败', players: '-', version: '-' });
+    updateMetrics({ status: '查询失败', players: '-', ping: '-', version: '-' });
     if (detail) detail.style.display = 'none';
     if (playerList) playerList.style.display = 'none';
     console.error('Status fetch error:', err);
   }
 }
 
-function updateMetrics({ status, players, version }) {
+function updateMetrics({ status, players, ping, version }) {
   const map = {
     metricStatus: status,
     metricPlayers: players,
+    metricPing: ping,
     metricVersion: version
   };
   Object.entries(map).forEach(([id, value]) => setText(id, value));
 }
 
 function resetMetrics() {
-  updateMetrics({ status: '查询中…', players: '-', version: '-' });
+  updateMetrics({ status: '查询中…', players: '-', ping: '-', version: '-' });
 }
 
 function setText(id, value) {
