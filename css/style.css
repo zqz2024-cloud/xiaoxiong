@@ -167,14 +167,14 @@ body {
 .features-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+  gap: 20px;
 }
 
 .feature-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 32px 24px;
+  padding: 24px 18px;
   text-align: center;
   transition: all 0.3s;
 }
@@ -185,16 +185,16 @@ body {
   border-color: var(--primary);
 }
 
-.feature-icon { font-size: 2.5rem; margin-bottom: 16px; }
+.feature-icon { font-size: 2.2rem; margin-bottom: 12px; }
 
 .feature-card h3 {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: #fff;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .feature-card p {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--text-muted);
   line-height: 1.5;
 }
@@ -203,21 +203,21 @@ body {
 .join-steps {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+  gap: 20px;
 }
 
 .step {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 28px 20px;
+  padding: 24px 18px;
   text-align: center;
   position: relative;
 }
 
 .step-number {
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   background: var(--primary);
   color: #fff;
   border-radius: 50%;
@@ -225,11 +225,11 @@ body {
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  font-size: 1.1rem;
-  margin: 0 auto 16px;
+  font-size: 1.05rem;
+  margin: 0 auto 12px;
 }
 
-.step h3 { font-size: 1rem; color: #fff; margin-bottom: 8px; }
+.step h3 { font-size: 1rem; color: #fff; margin-bottom: 6px; }
 .step p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; }
 .step code {
   font-family: 'Consolas', 'Courier New', monospace;
@@ -394,12 +394,26 @@ body {
 .footer-tagline { margin-top: 4px; font-size: 0.8rem; opacity: 0.7; }
 
 /* ===== Responsive ===== */
+/* 手机端：使用下面（步骤）的大卡片样式 */
 @media (max-width: 600px) {
   .hero-title { font-size: 2rem; }
   .hero-tagline { font-size: 1rem; }
   .detail-grid { grid-template-columns: 1fr; }
-  .join-steps { grid-template-columns: 1fr; }
+  .join-steps,
   .features-grid { grid-template-columns: 1fr; }
+
+  /* 加大卡片内边距和字号，模拟下面的"双列"卡片观感 */
+  .feature-card,
+  .step {
+    padding: 32px 24px;
+  }
+  .feature-icon { font-size: 2.6rem; margin-bottom: 16px; }
+  .feature-card h3,
+  .step h3 { font-size: 1.1rem; margin-bottom: 10px; }
+  .feature-card p,
+  .step p { font-size: 0.9rem; }
+  .step-number { width: 44px; height: 44px; font-size: 1.15rem; margin-bottom: 16px; }
+
   .nav-logo { font-size: 1rem; }
   .nav-links { gap: 16px; }
 }
