@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>服务器状态 - 小熊的小家庭</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">🐻 小熊的小家庭</a>
+      <div class="nav-links">
+        <a href="index.html">首页</a>
+        <a href="status.html" class="active">服务器状态</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="status-page">
+    <h1 class="page-title">服务器状态</h1>
+    <p class="page-subtitle">clementlb.top:31043</p>
+
+    <div class="status-card" id="statusCard">
+      <div class="status-loading">
+        <div class="spinner"></div>
+        <p>正在查询服务器状态...</p>
+      </div>
+    </div>
+
+    <div class="status-detail" id="statusDetail" style="display:none;">
+      <div class="detail-grid">
+        <div class="detail-item">
+          <span class="detail-label">服务器名称</span>
+          <span class="detail-value" id="detailName">-</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">游戏版本</span>
+          <span class="detail-value" id="detailVersion">-</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">在线玩家</span>
+          <span class="detail-value" id="detailPlayers">-</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">最大玩家</span>
+          <span class="detail-value" id="detailMaxPlayers">-</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">MOTD</span>
+          <span class="detail-value motd" id="detailMotd">-</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">软件</span>
+          <span class="detail-value" id="detailSoftware">-</span>
+        </div>
+      </div>
+
+      <div class="player-list" id="playerList" style="display:none;">
+        <h3>在线玩家列表</h3>
+        <div class="player-grid" id="playerGrid"></div>
+      </div>
+    </div>
+
+    <button class="btn-primary btn-refresh" onclick="fetchStatus()">刷新状态</button>
+  </main>
+
+  <footer class="footer">
+    <p>🐻 小熊的小家庭 &copy; 2026 | clementlb.top:31043</p>
+  </footer>
+
+  <script src="js/status.js"></script>
+</body>
+</html>
