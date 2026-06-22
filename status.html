@@ -4,31 +4,56 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>服务器状态 - 小熊的小家庭</title>
-  <link rel="stylesheet" href="css/style.css?v=3">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Silkscreen:wght@400;700&family=Fredoka:wght@400;500;600;700&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <nav class="navbar">
     <div class="nav-container">
-      <a href="index.html" class="nav-logo">🐻 小熊的小家庭</a>
+      <a href="index.html" class="nav-logo">
+        <span class="logo-pixel">🐻</span>
+        <span class="logo-text">小熊的小家庭</span>
+      </a>
       <div class="nav-links">
-        <a href="index.html">首页</a>
-        <a href="status.html" class="active">服务器状态</a>
+        <a href="index.html" class="nav-link">
+          <span class="nav-link-inner">首页</span>
+        </a>
+        <a href="status.html" class="nav-link active">
+          <span class="nav-link-inner">服务器状态</span>
+        </a>
       </div>
     </div>
   </nav>
 
   <main class="status-page">
-    <h1 class="page-title">服务器状态</h1>
-    <p class="page-subtitle">clementlb.top:31043</p>
+    <div class="status-header">
+      <h1 class="page-title">服务器状态</h1>
+      <p class="page-subtitle"><code class="status-ip-mono">clementlb.top</code></p>
+    </div>
 
     <div class="status-card" id="statusCard">
+      <div class="card-corner corner-tl"></div>
+      <div class="card-corner corner-tr"></div>
+      <div class="card-corner corner-bl"></div>
+      <div class="card-corner corner-br"></div>
       <div class="status-loading">
-        <div class="spinner"></div>
-        <p>正在查询服务器状态...</p>
+        <div class="bear-loader">
+          <div class="bear-loader-emoji">🐻</div>
+          <div class="loader-paws">
+            <span>🐾</span><span>🐾</span><span>🐾</span>
+          </div>
+        </div>
+        <p class="loading-text">小熊正在查看服务器...</p>
       </div>
     </div>
 
     <div class="status-detail" id="statusDetail" style="display:none;">
+      <div class="card-corner corner-tl"></div>
+      <div class="card-corner corner-tr"></div>
+      <div class="card-corner corner-bl"></div>
+      <div class="card-corner corner-br"></div>
       <div class="detail-grid">
         <div class="detail-item">
           <span class="detail-label">服务器名称</span>
@@ -46,7 +71,7 @@
           <span class="detail-label">最大玩家</span>
           <span class="detail-value" id="detailMaxPlayers">-</span>
         </div>
-        <div class="detail-item">
+        <div class="detail-item detail-full">
           <span class="detail-label">MOTD</span>
           <span class="detail-value motd" id="detailMotd">-</span>
         </div>
@@ -57,16 +82,22 @@
       </div>
 
       <div class="player-list" id="playerList" style="display:none;">
-        <h3>在线玩家列表</h3>
+        <h3 class="player-list-title">
+          <span>🐾</span> 在线玩家 <span>🐾</span>
+        </h3>
         <div class="player-grid" id="playerGrid"></div>
       </div>
     </div>
 
-    <button class="btn-primary btn-refresh" onclick="fetchStatus()">刷新状态</button>
+    <button class="btn btn-primary btn-refresh" onclick="fetchStatus()">
+      <span class="btn-icon">🔄</span>
+      <span>刷新状态</span>
+    </button>
   </main>
 
   <footer class="footer">
-    <p>🐻 小熊的小家庭 &copy; 2026 | clementlb.top</p>
+    <div class="footer-paws">🐾 🐾 🐾</div>
+    <p class="footer-main">🐻 小熊的小家庭 &copy; 2026 · clementlb.top</p>
   </footer>
 
   <script src="js/status.js"></script>
