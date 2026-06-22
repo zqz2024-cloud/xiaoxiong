@@ -10,14 +10,16 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <nav class="navbar">
+  <a href="#main" class="skip-link">跳到主内容</a>
+
+  <nav class="navbar" aria-label="主导航">
     <div class="nav-container">
       <a href="index.html" class="nav-logo">
-        <span class="logo-pixel">🐻</span>
+        <span class="logo-pixel" aria-hidden="true">🐻</span>
         <span class="logo-text">小熊的小家庭</span>
       </a>
       <div class="nav-links">
-        <a href="index.html" class="nav-link active">
+        <a href="index.html" class="nav-link active" aria-current="page">
           <span class="nav-link-inner">首页</span>
         </a>
         <a href="status.html" class="nav-link">
@@ -27,15 +29,17 @@
     </div>
   </nav>
 
-  <header class="hero">
+  <header class="hero" id="main">
     <div class="hero-grid-pattern"></div>
     <div class="hero-bear">
-      <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=cute%20blocky%20pixel%20art%20brown%20bear%20Minecraft%20character%20full%20body%20front%20view%20waving%20hand%20warm%20cream%20background%20simple%20geometric%20style%20friendly%20smile&image_size=square_hd"
-           alt="小熊角色"
-           class="bear-img"
-           onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-      <div class="bear-emoji-fallback" style="display:none;">🐻</div>
-      <div class="bear-shadow"></div>
+      <div class="bear-character">
+        <div class="bear-ear bear-ear-left" aria-hidden="true"></div>
+        <div class="bear-ear bear-ear-right" aria-hidden="true"></div>
+        <div class="bear-face" aria-hidden="true">🐻</div>
+        <div class="bear-cheek bear-cheek-left" aria-hidden="true"></div>
+        <div class="bear-cheek bear-cheek-right" aria-hidden="true"></div>
+      </div>
+      <div class="bear-shadow" aria-hidden="true"></div>
     </div>
 
     <div class="hero-content">
@@ -90,59 +94,59 @@
 
   <section class="features" id="features">
     <div class="section-header">
-      <span class="section-deco">✦</span>
-      <h2 class="section-title">服务器特色</h2>
-      <span class="section-deco">✦</span>
-    </div>
+        <span class="section-deco" aria-hidden="true">✦</span>
+        <h2 class="section-title">服务器特色</h2>
+        <span class="section-deco" aria-hidden="true">✦</span>
+      </div>
 
     <div class="features-grid">
       <div class="feature-card">
-        <div class="card-corner corner-tl"></div>
-        <div class="card-corner corner-tr"></div>
-        <div class="card-corner corner-bl"></div>
-        <div class="card-corner corner-br"></div>
+        <div class="card-corner corner-tl" aria-hidden="true"></div>
+        <div class="card-corner corner-tr" aria-hidden="true"></div>
+        <div class="card-corner corner-bl" aria-hidden="true"></div>
+        <div class="card-corner corner-br" aria-hidden="true"></div>
         <div class="feature-icon-wrap">
-          <div class="feature-icon">🏠</div>
-          <div class="icon-paw">🐾</div>
+          <div class="feature-icon" aria-hidden="true">🏠</div>
+          <div class="icon-paw" aria-hidden="true">🐾</div>
         </div>
         <h3 class="feature-title">温馨社区</h3>
         <p class="feature-desc">和谐友善的玩家社区，无论新手老手都能找到归属感，像家一般温暖</p>
       </div>
 
       <div class="feature-card">
-        <div class="card-corner corner-tl"></div>
-        <div class="card-corner corner-tr"></div>
-        <div class="card-corner corner-bl"></div>
-        <div class="card-corner corner-br"></div>
+        <div class="card-corner corner-tl" aria-hidden="true"></div>
+        <div class="card-corner corner-tr" aria-hidden="true"></div>
+        <div class="card-corner corner-bl" aria-hidden="true"></div>
+        <div class="card-corner corner-br" aria-hidden="true"></div>
         <div class="feature-icon-wrap">
-          <div class="feature-icon">⚡</div>
-          <div class="icon-paw">🐾</div>
+          <div class="feature-icon" aria-hidden="true">⚡</div>
+          <div class="icon-paw" aria-hidden="true">🐾</div>
         </div>
         <h3 class="feature-title">稳定流畅</h3>
         <p class="feature-desc">高性能服务器，低延迟畅玩体验，24小时不间断稳定运行</p>
       </div>
 
       <div class="feature-card">
-        <div class="card-corner corner-tl"></div>
-        <div class="card-corner corner-tr"></div>
-        <div class="card-corner corner-bl"></div>
-        <div class="card-corner corner-br"></div>
+        <div class="card-corner corner-tl" aria-hidden="true"></div>
+        <div class="card-corner corner-tr" aria-hidden="true"></div>
+        <div class="card-corner corner-bl" aria-hidden="true"></div>
+        <div class="card-corner corner-br" aria-hidden="true"></div>
         <div class="feature-icon-wrap">
-          <div class="feature-icon">👑</div>
-          <div class="icon-paw">🐾</div>
+          <div class="feature-icon" aria-hidden="true">👑</div>
+          <div class="icon-paw" aria-hidden="true">🐾</div>
         </div>
         <h3 class="feature-title">后宫三千</h3>
         <p class="feature-desc">小熊的后宫佳丽三千人，等你来加入这个独特的大家庭</p>
       </div>
 
       <div class="feature-card">
-        <div class="card-corner corner-tl"></div>
-        <div class="card-corner corner-tr"></div>
-        <div class="card-corner corner-bl"></div>
-        <div class="card-corner corner-br"></div>
+        <div class="card-corner corner-tl" aria-hidden="true"></div>
+        <div class="card-corner corner-tr" aria-hidden="true"></div>
+        <div class="card-corner corner-bl" aria-hidden="true"></div>
+        <div class="card-corner corner-br" aria-hidden="true"></div>
         <div class="feature-icon-wrap">
-          <div class="feature-icon">🌐</div>
-          <div class="icon-paw">🐾</div>
+          <div class="feature-icon" aria-hidden="true">🌐</div>
+          <div class="icon-paw" aria-hidden="true">🐾</div>
         </div>
         <h3 class="feature-title">多端互通</h3>
         <p class="feature-desc">支持 Java 版与基岩版，轨迹多端畅玩，无缝连接</p>
@@ -152,59 +156,59 @@
 
   <section class="join">
     <div class="section-header">
-      <span class="section-deco">✦</span>
+      <span class="section-deco" aria-hidden="true">✦</span>
       <h2 class="section-title">如何加入</h2>
-      <span class="section-deco">✦</span>
+      <span class="section-deco" aria-hidden="true">✦</span>
     </div>
 
     <div class="join-steps">
       <div class="step">
-        <div class="card-corner corner-tl"></div>
-        <div class="card-corner corner-tr"></div>
-        <div class="card-corner corner-bl"></div>
-        <div class="card-corner corner-br"></div>
+        <div class="card-corner corner-tl" aria-hidden="true"></div>
+        <div class="card-corner corner-tr" aria-hidden="true"></div>
+        <div class="card-corner corner-bl" aria-hidden="true"></div>
+        <div class="card-corner corner-br" aria-hidden="true"></div>
         <div class="step-icon-wrap">
-          <span class="step-number">1</span>
-          <div class="icon-paw">🐾</div>
+          <span class="step-number" aria-hidden="true">1</span>
+          <div class="icon-paw" aria-hidden="true">🐾</div>
         </div>
         <h3 class="step-title">启动 Minecraft</h3>
         <p class="step-desc">打开 Minecraft Java 版 1.21+</p>
       </div>
 
       <div class="step">
-        <div class="card-corner corner-tl"></div>
-        <div class="card-corner corner-tr"></div>
-        <div class="card-corner corner-bl"></div>
-        <div class="card-corner corner-br"></div>
+        <div class="card-corner corner-tl" aria-hidden="true"></div>
+        <div class="card-corner corner-tr" aria-hidden="true"></div>
+        <div class="card-corner corner-bl" aria-hidden="true"></div>
+        <div class="card-corner corner-br" aria-hidden="true"></div>
         <div class="step-icon-wrap">
-          <span class="step-number">2</span>
-          <div class="icon-paw">🐾</div>
+          <span class="step-number" aria-hidden="true">2</span>
+          <div class="icon-paw" aria-hidden="true">🐾</div>
         </div>
         <h3 class="step-title">添加服务器</h3>
         <p class="step-desc">点击「多人游戏」→「添加服务器」</p>
       </div>
 
       <div class="step">
-        <div class="card-corner corner-tl"></div>
-        <div class="card-corner corner-tr"></div>
-        <div class="card-corner corner-bl"></div>
-        <div class="card-corner corner-br"></div>
+        <div class="card-corner corner-tl" aria-hidden="true"></div>
+        <div class="card-corner corner-tr" aria-hidden="true"></div>
+        <div class="card-corner corner-bl" aria-hidden="true"></div>
+        <div class="card-corner corner-br" aria-hidden="true"></div>
         <div class="step-icon-wrap">
-          <span class="step-number">3</span>
-          <div class="icon-paw">🐾</div>
+          <span class="step-number" aria-hidden="true">3</span>
+          <div class="icon-paw" aria-hidden="true">🐾</div>
         </div>
         <h3 class="step-title">输入地址</h3>
         <p class="step-desc">服务器地址：<code class="step-code">clementlb.top</code></p>
       </div>
 
       <div class="step">
-        <div class="card-corner corner-tl"></div>
-        <div class="card-corner corner-tr"></div>
-        <div class="card-corner corner-bl"></div>
-        <div class="card-corner corner-br"></div>
+        <div class="card-corner corner-tl" aria-hidden="true"></div>
+        <div class="card-corner corner-tr" aria-hidden="true"></div>
+        <div class="card-corner corner-bl" aria-hidden="true"></div>
+        <div class="card-corner corner-br" aria-hidden="true"></div>
         <div class="step-icon-wrap">
-          <span class="step-number">4</span>
-          <div class="icon-paw">🐾</div>
+          <span class="step-number" aria-hidden="true">4</span>
+          <div class="icon-paw" aria-hidden="true">🐾</div>
         </div>
         <h3 class="step-title">开始冒险</h3>
         <p class="step-desc">加入游戏，和小熊一起玩耍吧！</p>
@@ -213,7 +217,7 @@
   </section>
 
   <footer class="footer">
-    <div class="footer-paws">🐾 🐾 🐾</div>
+    <div class="footer-paws" aria-hidden="true">🐾 🐾 🐾</div>
     <p class="footer-main">🐻 小熊的小家庭 &copy; 2026 · clementlb.top</p>
     <p class="footer-tagline">轨迹多端的小熊与他的后宫佳丽三千人</p>
   </footer>
@@ -221,43 +225,67 @@
   <script>
     function copyIp() {
       const ip = 'clementlb.top';
-      navigator.clipboard?.writeText(ip).then(() => {
-        const btn = document.querySelector('.ip-copy');
-        const icon = btn.querySelector('.copy-icon');
-        icon.textContent = '✅';
-        setTimeout(() => { icon.textContent = '📋'; }, 1500);
-      });
+      const btn = document.querySelector('.ip-copy');
+      const icon = btn?.querySelector('.copy-icon');
+      const restore = () => { if (icon) icon.textContent = '📋'; };
+      if (navigator.clipboard?.writeText) {
+        navigator.clipboard.writeText(ip).then(() => {
+          if (icon) icon.textContent = '✅';
+          setTimeout(restore, 1500);
+        }).catch(restore);
+      } else {
+        // Fallback for older browsers
+        const ta = document.createElement('textarea');
+        ta.value = ip;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); if (icon) icon.textContent = '✅'; } catch (e) {}
+        document.body.removeChild(ta);
+        setTimeout(restore, 1500);
+      }
     }
+
+    // Honor reduced motion preference
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     // Animate stats on load
     document.addEventListener('DOMContentLoaded', () => {
       const stat = document.querySelector('.stat-num[data-target]');
-      if (!stat) return;
-      const target = +stat.dataset.target;
-      let current = 0;
-      const step = Math.ceil(target / 60);
-      const tick = () => {
-        current += step;
-        if (current >= target) { current = target; }
-        stat.textContent = current.toLocaleString() + '+';
-        if (current < target) requestAnimationFrame(tick);
-      };
-      const obs = new IntersectionObserver((entries) => {
-        entries.forEach(e => { if (e.isIntersecting) { tick(); obs.disconnect(); } });
-      });
-      obs.observe(stat);
+      if (stat) {
+        const target = +stat.dataset.target;
+        if (prefersReducedMotion) {
+          stat.textContent = target.toLocaleString() + '+';
+        } else {
+          let current = 0;
+          const step = Math.max(1, Math.ceil(target / 60));
+          const tick = () => {
+            current += step;
+            if (current >= target) current = target;
+            stat.textContent = current.toLocaleString() + '+';
+            if (current < target) requestAnimationFrame(tick);
+          };
+          const obs = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) { tick(); obs.disconnect(); } });
+          });
+          obs.observe(stat);
+        }
+      }
 
-      // Stagger card reveal
-      const cards = document.querySelectorAll('.feature-card, .step');
-      cards.forEach((c, i) => {
-        c.style.opacity = '0';
-        c.style.transform = 'translateY(20px)';
-        c.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        setTimeout(() => {
-          c.style.opacity = '1';
-          c.style.transform = 'translateY(0)';
-        }, 100 + i * 80);
-      });
+      // Stagger card reveal (skipped under reduced motion)
+      if (!prefersReducedMotion) {
+        const cards = document.querySelectorAll('.feature-card, .step');
+        cards.forEach((c, i) => {
+          c.style.opacity = '0';
+          c.style.transform = 'translateY(20px)';
+          c.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+          setTimeout(() => {
+            c.style.opacity = '1';
+            c.style.transform = 'translateY(0)';
+          }, 100 + i * 80);
+        });
+      }
     });
   </script>
 </body>

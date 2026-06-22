@@ -10,50 +10,52 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <nav class="navbar">
+  <a href="#main" class="skip-link">跳到主内容</a>
+
+  <nav class="navbar" aria-label="主导航">
     <div class="nav-container">
       <a href="index.html" class="nav-logo">
-        <span class="logo-pixel">🐻</span>
+        <span class="logo-pixel" aria-hidden="true">🐻</span>
         <span class="logo-text">小熊的小家庭</span>
       </a>
       <div class="nav-links">
         <a href="index.html" class="nav-link">
           <span class="nav-link-inner">首页</span>
         </a>
-        <a href="status.html" class="nav-link active">
+        <a href="status.html" class="nav-link active" aria-current="page">
           <span class="nav-link-inner">服务器状态</span>
         </a>
       </div>
     </div>
   </nav>
 
-  <main class="status-page">
+  <main class="status-page" id="main">
     <div class="status-header">
       <h1 class="page-title">服务器状态</h1>
       <p class="page-subtitle"><code class="status-ip-mono">clementlb.top</code></p>
     </div>
 
-    <div class="status-card" id="statusCard">
-      <div class="card-corner corner-tl"></div>
-      <div class="card-corner corner-tr"></div>
-      <div class="card-corner corner-bl"></div>
-      <div class="card-corner corner-br"></div>
+    <div class="status-card" id="statusCard" role="status" aria-live="polite" aria-busy="true">
+      <div class="card-corner corner-tl" aria-hidden="true"></div>
+      <div class="card-corner corner-tr" aria-hidden="true"></div>
+      <div class="card-corner corner-bl" aria-hidden="true"></div>
+      <div class="card-corner corner-br" aria-hidden="true"></div>
       <div class="status-loading">
         <div class="bear-loader">
-          <div class="bear-loader-emoji">🐻</div>
-          <div class="loader-paws">
+          <div class="bear-loader-emoji" aria-hidden="true">🐻</div>
+          <div class="loader-paws" aria-hidden="true">
             <span>🐾</span><span>🐾</span><span>🐾</span>
           </div>
         </div>
-        <p class="loading-text">小熊正在查看服务器...</p>
+        <p class="loading-text">小熊正在查看服务器…</p>
       </div>
     </div>
 
     <div class="status-detail" id="statusDetail" style="display:none;">
-      <div class="card-corner corner-tl"></div>
-      <div class="card-corner corner-tr"></div>
-      <div class="card-corner corner-bl"></div>
-      <div class="card-corner corner-br"></div>
+      <div class="card-corner corner-tl" aria-hidden="true"></div>
+      <div class="card-corner corner-tr" aria-hidden="true"></div>
+      <div class="card-corner corner-bl" aria-hidden="true"></div>
+      <div class="card-corner corner-br" aria-hidden="true"></div>
       <div class="detail-grid">
         <div class="detail-item">
           <span class="detail-label">服务器名称</span>
@@ -83,20 +85,20 @@
 
       <div class="player-list" id="playerList" style="display:none;">
         <h3 class="player-list-title">
-          <span>🐾</span> 在线玩家 <span>🐾</span>
+          <span aria-hidden="true">🐾</span> 在线玩家 <span aria-hidden="true">🐾</span>
         </h3>
         <div class="player-grid" id="playerGrid"></div>
       </div>
     </div>
 
-    <button class="btn btn-primary btn-refresh" onclick="fetchStatus()">
-      <span class="btn-icon">🔄</span>
+    <button class="btn btn-primary btn-refresh" onclick="fetchStatus()" aria-label="刷新服务器状态">
+      <span class="btn-icon" aria-hidden="true">🔄</span>
       <span>刷新状态</span>
     </button>
   </main>
 
   <footer class="footer">
-    <div class="footer-paws">🐾 🐾 🐾</div>
+    <div class="footer-paws" aria-hidden="true">🐾 🐾 🐾</div>
     <p class="footer-main">🐻 小熊的小家庭 &copy; 2026 · clementlb.top</p>
   </footer>
 
