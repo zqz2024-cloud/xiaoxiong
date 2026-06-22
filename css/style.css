@@ -189,10 +189,10 @@ body {
   position: relative;
   min-height: 560px;
   display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 40px;
+  grid-template-columns: 320px 1fr;
+  gap: 60px;
   align-items: center;
-  padding: 60px 24px 48px;
+  padding: 60px 48px 48px;
   max-width: 1200px;
   margin: 0 auto;
   overflow: hidden;
@@ -201,14 +201,14 @@ body {
 
 .hero-grid-pattern {
   position: absolute;
-  inset: -40px;
+  inset: -60px;
   background:
     repeating-linear-gradient(0deg, transparent, transparent 38px, rgba(160, 82, 45, 0.04) 38px, rgba(160, 82, 45, 0.04) 40px),
     repeating-linear-gradient(90deg, transparent, transparent 38px, rgba(160, 82, 45, 0.04) 38px, rgba(160, 82, 45, 0.04) 40px);
   pointer-events: none;
   z-index: 0;
-  mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
-  -webkit-mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
+  mask-image: radial-gradient(ellipse at center, #000 40%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 40%, transparent 80%);
 }
 
 .hero-bear {
@@ -222,14 +222,14 @@ body {
 
 .bear-character {
   position: relative;
-  width: 240px;
-  height: 240px;
+  width: 280px;
+  height: 280px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: linear-gradient(180deg, var(--bg-soft) 0%, var(--bg-card) 100%);
   border: 3px solid var(--bear-fur-dark);
-  border-radius: 24px;
+  border-radius: 28px;
   box-shadow:
     0 8px 0 var(--bear-fur-dark),
     0 14px 28px var(--pixel-shadow),
@@ -240,9 +240,9 @@ body {
 /* CSS ears */
 .bear-ear {
   position: absolute;
-  top: -22px;
-  width: 60px;
-  height: 60px;
+  top: -26px;
+  width: 72px;
+  height: 72px;
   background: radial-gradient(circle at 30% 30%, var(--bear-fur-light), var(--bear-fur) 65%, var(--bear-fur-dark));
   border: 3px solid var(--bear-fur-dark);
   border-radius: 50%;
@@ -252,40 +252,40 @@ body {
 .bear-ear::after {
   content: '';
   position: absolute;
-  top: 14px;
-  left: 14px;
-  width: 24px;
-  height: 24px;
+  top: 18px;
+  left: 18px;
+  width: 28px;
+  height: 28px;
   background: var(--bear-snout);
   border-radius: 50%;
   opacity: 0.7;
 }
-.bear-ear-left { left: 18px; }
-.bear-ear-right { right: 18px; }
+.bear-ear-left { left: 22px; }
+.bear-ear-right { right: 22px; }
 
 .bear-face {
   position: relative;
   z-index: 1;
-  font-size: 7rem;
+  font-size: 8rem;
   line-height: 1;
   filter: drop-shadow(0 4px 0 rgba(160, 82, 45, 0.25));
 }
 
 .bear-cheek {
   position: absolute;
-  width: 18px;
-  height: 18px;
+  width: 22px;
+  height: 22px;
   background: var(--bear-snout);
   border-radius: 50%;
   opacity: 0.55;
   z-index: 1;
 }
-.bear-cheek-left { bottom: 56px; left: 32px; }
-.bear-cheek-right { bottom: 56px; right: 32px; }
+.bear-cheek-left { bottom: 64px; left: 38px; }
+.bear-cheek-right { bottom: 64px; right: 38px; }
 
 .bear-shadow {
-  width: 180px;
-  height: 20px;
+  width: 220px;
+  height: 24px;
   background: radial-gradient(ellipse, rgba(62, 39, 35, 0.25) 0%, transparent 70%);
   margin-top: -20px;
   animation: shadow-pulse 2.5s ease-in-out infinite;
@@ -338,8 +338,8 @@ body {
 
 .hero-title {
   font-family: 'Silkscreen', 'Press Start 2P', monospace;
-  font-size: 3.2rem;
-  line-height: 1.1;
+  font-size: 3.8rem;
+  line-height: 1.05;
   font-weight: 700;
   margin-bottom: 18px;
   letter-spacing: 1px;
@@ -357,11 +357,11 @@ body {
 }
 
 .hero-tagline {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   color: var(--text-muted);
   margin-bottom: 32px;
   font-weight: 500;
-  max-width: 480px;
+  max-width: 560px;
   position: relative;
   padding-left: 16px;
   text-wrap: pretty;
@@ -491,27 +491,29 @@ body {
 .hero-stats {
   display: flex;
   align-items: center;
+  justify-content: space-around;
   gap: 24px;
-  padding: 20px 28px;
+  padding: 24px 32px;
   background: rgba(255, 250, 240, 0.6);
   border: 2px dashed var(--border-strong);
   border-radius: var(--radius);
   backdrop-filter: blur(6px);
-  max-width: fit-content;
+  width: 100%;
+  max-width: 600px;
 }
 
 .stat { text-align: center; }
 .stat-num {
   font-family: 'Silkscreen', monospace;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   color: var(--bear-fur-dark);
   font-weight: 700;
   line-height: 1;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
   font-variant-numeric: tabular-nums;
 }
 .stat-label {
-  font-size: 0.78rem;
+  font-size: 0.82rem;
   color: var(--text-muted);
   letter-spacing: 0.5px;
   font-weight: 500;
@@ -519,7 +521,7 @@ body {
 
 .stat-divider {
   width: 1px;
-  height: 32px;
+  height: 40px;
   background: var(--border-strong);
 }
 
@@ -1157,7 +1159,7 @@ body {
     grid-template-columns: 1fr;
     text-align: center;
     min-height: auto;
-    padding: 40px 20px 60px;
+    padding: 32px 24px 40px;
     gap: 24px;
   }
   .bear-character { width: 180px; height: 180px; }
@@ -1167,12 +1169,13 @@ body {
   .bear-cheek { width: 14px; height: 14px; bottom: 42px; }
   .bear-cheek-left { left: 24px; }
   .bear-cheek-right { right: 24px; }
-  .hero-content { text-align: center; }
+  .hero-content { text-align: center; display: flex; flex-direction: column; align-items: center; }
   .hero-tagline { padding-left: 0; }
   .hero-tagline::before { left: 50%; transform: translateX(-50%); width: 32px; height: 3px; top: -10px; bottom: auto; }
   .hero-title { font-size: 2.4rem; }
   .hero-ip { flex-direction: row; }
-  .hero-stats { margin: 0 auto; padding: 16px 20px; gap: 16px; }
+  .hero-actions { justify-content: center; }
+  .hero-stats { margin: 0 auto; padding: 16px 20px; gap: 16px; width: 100%; max-width: 420px; }
   .stat-num { font-size: 1.3rem; }
   .nav-container { padding: 0 16px; }
   .logo-text { font-size: 0.95rem; }
