@@ -109,6 +109,7 @@ async function fetchStatus() {
     if (detail) detail.style.display = 'none';
     if (playerList) playerList.style.display = 'none';
     console.error('Status fetch error:', err);
+    throw err;
   }
 }
 
@@ -136,6 +137,14 @@ function escapeHtml(text) {
   return div.innerHTML;
 }
 
-// Auto-fetch on load + every 60s
-fetchStatus();
-setInterval(fetchStatus, 60000);
+// Auto-fetch on load + every 5min, retry up to 10 times on failure
+function fetchStatusWithRetry(retriesLeft = 10) {
+  fetchStatus().catch(() => {
+    if (retriesLeft > 0) {
+      setTimeout(() => fetchStatusWithRetry(retriesLeft - 1), 3000);
+    }
+  });
+}
+
+fetchStatusWithRetry();
+setInterval(() => fetchStatusWithRetry(), 300000);

@@ -280,12 +280,12 @@
       }
 
       fetchPlayerCount();
-      setInterval(fetchPlayerCount, 60000);
+      setInterval(fetchPlayerCount, 300000);
 
       // Stagger card reveal is handled in CSS (avoids first-frame flash)
     });
 
-    function fetchPlayerCount() {
+    function fetchPlayerCount(retriesLeft = 10) {
       const el = document.getElementById('homePlayerCount');
       if (!el) return;
       fetch('https://api.mcsrvstat.us/3/mc.clementlb.top:25565')
@@ -299,7 +299,13 @@
             el.textContent = '离线';
           }
         })
-        .catch(() => { el.textContent = '-'; });
+        .catch(() => {
+          if (retriesLeft > 0) {
+            setTimeout(() => fetchPlayerCount(retriesLeft - 1), 3000);
+          } else {
+            el.textContent = '-';
+          }
+        });
     }
   </script>
 </body>
