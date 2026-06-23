@@ -288,7 +288,7 @@
     function fetchPlayerCount() {
       const el = document.getElementById('homePlayerCount');
       if (!el) return;
-      fetch('https://api.mcsrvstat.us/3/clementlb.top:25565')
+      fetch('https://api.mcsrvstat.us/3/[240e:35e:983:600:214f:ca7e:78e5:8a5]:25565')
         .then(r => r.json())
         .then(data => {
           if (data && data.online) {
